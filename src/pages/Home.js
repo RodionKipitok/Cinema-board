@@ -12,7 +12,7 @@ function HomePage(params) {
       },
     };
 
-    let res = fetch(
+    fetch(
       'https://api.themoviedb.org/3/trending/movie/day?language=en-US',
       options
     )

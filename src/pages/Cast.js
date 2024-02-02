@@ -23,7 +23,7 @@ function Cast() {
       .then(response => response.json())
       .then(response => setCast(response.cast))
       .catch(err => console.error(err));
-  }, [casts]);
+  }, [casts, id]);
 
   return (
     <ul>
@@ -33,6 +33,7 @@ function Cast() {
             <img
               className="imgCast"
               src="https://cdn-icons-png.flaticon.com/512/4908/4908415.png"
+              alt=""
             />
           ) : (
             <img

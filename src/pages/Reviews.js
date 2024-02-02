@@ -22,7 +22,7 @@ function Review(params) {
       .then(response => response.json())
       .then(response => setReview(response.results))
       .catch(err => console.error(err));
-  }, []);
+  }, [id]);
 
   return (
     <ul>

@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import SearchMovies from 'pages/SearchMovies';
 import HomePage from 'pages/Home';
 import PageMovie from 'pages/PageMovie';

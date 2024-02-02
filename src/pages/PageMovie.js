@@ -34,6 +34,7 @@ function PageMovie() {
             <div>
               <img
                 src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
+                alt=""
               />
             </div>
             <h1 className="heading">{movie.original_title}</h1>

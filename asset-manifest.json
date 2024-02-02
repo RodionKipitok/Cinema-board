@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/routing-react/static/css/main.bbc4e61a.css",
-    "main.js": "/routing-react/static/js/main.4c0edaaf.js",
+    "main.js": "/routing-react/static/js/main.adaf5000.js",
     "index.html": "/routing-react/index.html",
     "main.bbc4e61a.css.map": "/routing-react/static/css/main.bbc4e61a.css.map",
-    "main.4c0edaaf.js.map": "/routing-react/static/js/main.4c0edaaf.js.map"
+    "main.adaf5000.js.map": "/routing-react/static/js/main.adaf5000.js.map"
   },
   "entrypoints": [
     "static/css/main.bbc4e61a.css",
-    "static/js/main.4c0edaaf.js"
+    "static/js/main.adaf5000.js"
   ]
 }

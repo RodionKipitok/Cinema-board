@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 function Review(params) {
-  const [review, setReview] = useState();
+  const [review, setReview] = useState([]);
   console.log(review);
   const { id } = useParams();
+  console.log(id);
   useEffect(() => {
     const options = {
       method: 'GET',
@@ -22,7 +23,7 @@ function Review(params) {
       .then(response => response.json())
       .then(response => setReview(response.results))
       .catch(err => console.error(err));
-  }, [id]);
+  }, [review, id]);
 
   return (
     <ul>

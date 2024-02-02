@@ -39,6 +39,7 @@ function Cast() {
             <img
               className="imgCast"
               src={`https://image.tmdb.org/t/p/original${cast.profile_path}`}
+              alt=""
             />
           )}
           <p>{cast.original_name}</p>

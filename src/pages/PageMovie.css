@@ -23,6 +23,10 @@
   padding-right: 16px;
 }
 
+.imgPageMovie {
+  border-radius: 20px;
+}
+
 .heading {
   position: absolute;
   left: 460px;

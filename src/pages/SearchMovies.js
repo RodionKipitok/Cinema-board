@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useParams } from 'react-router-dom';
 import '../pages/SearchMovies.css';
 
 function SearchMovies() {
-  const [searchQuery, setSearchQuery] = useState('');
   const [movies, setMovies] = useState([]);
   console.log(movies);
-  const [params, setParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+  console.log(searchParams);
+
+  const postQuery = searchParams.get('post') || '';
 
   useEffect(() => {
     const options = {
@@ -19,35 +21,30 @@ function SearchMovies() {
     };
 
     fetch(
-      `https://api.themoviedb.org/3/search/movie?query=${searchQuery}&include_adult=false&language=en-US&page=1`,
+      `https://api.themoviedb.org/3/search/movie?query=${postQuery}
+      &include_adult=false&language=en-US&page=1`,
       options
     )
       .then(response => response.json())
       .then(response => setMovies(response.results))
       .catch(err => console.error(err));
-  }, [searchQuery]);
+  }, [postQuery]);
 
   const hendleSubmit = e => {
     e.preventDefault();
-
-    setParams({ query: searchQuery });
+    const form = e.target;
+    console.log(e);
+    const query = form.search.value;
+    console.log(query);
+    setSearchParams({ post: query });
   };
 
   return (
     <>
       <h2>Search Movie</h2>
-      <form autoComplete="off">
-        <input
-          className="inputSearch"
-          type="search"
-          value={searchQuery}
-          onChange={evt => {
-            setSearchQuery(evt.target.value);
-          }}
-        ></input>
-        <button type="submit" onClick={hendleSubmit}>
-          Search
-        </button>
+      <form autoComplete="off" onSubmit={hendleSubmit}>
+        <input className="inputSearch" name="search"></input>
+        <button type="submit">Search</button>
       </form>
       <main>
         <article>

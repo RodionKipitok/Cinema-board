@@ -52,11 +52,6 @@ function PageMovie() {
               <li className="itemList">
                 <p>Genres</p>
               </li>
-              {/* <li>
-              {movie.genres.map(genre => (
-                <p key={genre.id}>{genre.name}</p>
-              ))}
-            </li> */}
             </ul>
           </div>
         </article>

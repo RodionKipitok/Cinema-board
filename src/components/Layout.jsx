@@ -13,8 +13,8 @@ const Layuot = () => {
             Movies
           </NavLink>
         </nav>
-        <Outlet />
       </header>
+      <Outlet />
     </>
   );
 };

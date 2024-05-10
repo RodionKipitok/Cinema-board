@@ -11,7 +11,7 @@ import {
 
 function HomePage() {
   const [listMovies, setListMovies] = useState([]);
-  console.log(listMovies);
+
   useEffect(() => {
     const options = {
       method: 'GET',
@@ -36,19 +36,23 @@ function HomePage() {
       <Grid container spacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         {listMovies.map(movie => (
           <Grid key={movie.id} item xs={4}>
-            <Card sx={{ maxWidth: 345 }}>
-              <CardMedia
-                sx={{ height: 140 }}
-                image={`https://image.tmdb.org/t/p/w342${movie.backdrop_path}`}
-                title="post movie"
-              />
-              <CardContent>
-                <Link to={`${movie.id}`}>{movie.original_title}</Link>
-                <Typography variant="p" component="p">
-                  {movie.release_date}
-                </Typography>
-              </CardContent>
-            </Card>
+            <Link to={`${movie.id}`}>
+              <Card sx={{ maxWidth: 345 }}>
+                <CardMedia
+                  sx={{ height: 140 }}
+                  image={`https://image.tmdb.org/t/p/w342${movie.backdrop_path}`}
+                  title="post movie"
+                />
+                <CardContent>
+                  <Typography variant="p" component="p">
+                    {movie.original_title}
+                  </Typography>
+                  <Typography variant="p" component="p">
+                    {movie.release_date}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Link>
           </Grid>
         ))}
       </Grid>
@@ -57,41 +61,3 @@ function HomePage() {
 }
 
 export default HomePage;
-
-{
-  /* <li key={movie.id}>
-            <Card sx={{ maxWidth: 345 }}>
-              <CardMedia
-                sx={{ height: 140 }}
-                image={`https://image.tmdb.org/t/p/w342${movie.backdrop_path}`}
-                title="green iguana"
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  <Link to={`${movie.id}`}>{movie.original_title}</Link>
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {movie.release_date}
-                </Typography>
-              </CardContent>
-            </Card>
-          </li> */
-}
-
-{
-  /* <ul>
-{listMovies.map(movie => (
-  <Box sx={{ width: '100%' }}>
-    <Grid
-      container
-      rowSpacing={1}
-      columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-    >
-      <Grid item xs={6}>
-        <p>1</p>
-      </Grid>
-    </Grid>
-  </Box>
-))}
-</ul> */
-}

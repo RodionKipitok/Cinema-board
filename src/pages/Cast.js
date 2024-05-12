@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Container, Card, CardContent, CardMedia, Grid } from '@mui/material';
 import '../pages/Cast.css';
 
 function Cast() {
@@ -27,24 +28,34 @@ function Cast() {
 
   return (
     <ul>
-      {casts.map(cast => (
-        <li key={cast.id}>
-          {cast.profile_path === null ? (
-            <img
-              className="imgCast"
-              src="https://cdn-icons-png.flaticon.com/512/4908/4908415.png"
-              alt=""
-            />
-          ) : (
-            <img
-              className="imgCast"
-              src={`https://image.tmdb.org/t/p/original${cast.profile_path}`}
-              alt=""
-            />
-          )}
-          <p>{cast.original_name}</p>
-        </li>
-      ))}
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        {casts.map(cast => (
+          <li key={cast.id}>
+            <Grid item sx={3}>
+              <Card sx={{ maxWidth: 150 }}>
+                <CardMedia>
+                  {cast.profile_path === null ? (
+                    <img
+                      className="imgCast"
+                      src="https://cdn-icons-png.flaticon.com/512/4908/4908415.png"
+                      alt=""
+                    />
+                  ) : (
+                    <img
+                      className="imgCast"
+                      src={`https://image.tmdb.org/t/p/original${cast.profile_path}`}
+                      alt=""
+                    />
+                  )}
+                </CardMedia>
+                <CardContent>
+                  <p>{cast.original_name}</p>
+                </CardContent>
+              </Card>
+            </Grid>
+          </li>
+        ))}
+      </Grid>
     </ul>
   );
 }

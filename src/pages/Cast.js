@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Card, CardContent, CardMedia, Grid } from '@mui/material';
+import { Card, CardContent, CardMedia, Grid } from '@mui/material';
 import '../pages/Cast.css';
 
 function Cast() {

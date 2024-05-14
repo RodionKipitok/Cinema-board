@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Card, CardContent, CardMedia, Grid } from '@mui/material';
+import { Card, CardContent, CardMedia, Grid, Container } from '@mui/material';
 import '../pages/Cast.css';
 
 function Cast() {
   const [casts, setCast] = useState([]);
-
+  console.log(casts);
   const { id } = useParams();
   useEffect(() => {
     const options = {
@@ -27,36 +27,36 @@ function Cast() {
   }, [casts, id]);
 
   return (
-    <ul>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+    <Container sx={{ mt: '1rem', mb: '1rem' }}>
+      <Grid container spacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         {casts.map(cast => (
-          <li key={cast.id}>
-            <Grid item sx={3}>
-              <Card sx={{ maxWidth: 150 }}>
-                <CardMedia>
-                  {cast.profile_path === null ? (
-                    <img
-                      className="imgCast"
-                      src="https://cdn-icons-png.flaticon.com/512/4908/4908415.png"
-                      alt=""
-                    />
-                  ) : (
-                    <img
-                      className="imgCast"
-                      src={`https://image.tmdb.org/t/p/original${cast.profile_path}`}
-                      alt=""
-                    />
-                  )}
-                </CardMedia>
-                <CardContent>
-                  <p>{cast.original_name}</p>
-                </CardContent>
-              </Card>
-            </Grid>
-          </li>
+          <Grid key={cast.id} item xs={3}>
+            <Card sx={{ maxWidth: 250 }}>
+              {cast.profile_path === null ? (
+                <CardMedia
+                  style={{ height: 250 }}
+                  component="img"
+                  image="https://st.depositphotos.com/1654249/1263/i/950/depositphotos_12630302-stock-photo-3d-man-showing-thumbs-up.jpg"
+                  alt=""
+                />
+              ) : (
+                <CardMedia
+                  component="img"
+                  image={`https://image.tmdb.org/t/p/original${cast.profile_path}`}
+                  alt=""
+                />
+              )}
+              <CardContent>
+                <span>Name</span>
+                <p>{cast.original_name}</p>
+                <span>Character</span>
+                <p>{cast.character}</p>
+              </CardContent>
+            </Card>
+          </Grid>
         ))}
       </Grid>
-    </ul>
+    </Container>
   );
 }
 

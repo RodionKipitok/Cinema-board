@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Card, CardContent, Container } from '@mui/material';
 
 function Review(params) {
   const [review, setReview] = useState([]);
@@ -26,14 +27,16 @@ function Review(params) {
   }, [review, id]);
 
   return (
-    <ul>
-      {review.map(item => (
-        <li key={item.id}>
-          <h4>{item.author}</h4>
-          <p>{item.content}</p>
-        </li>
-      ))}
-    </ul>
+    <Container>
+      <ul>
+        {review.map(item => (
+          <li key={item.id}>
+            <h4>{item.author}</h4>
+            <p>{item.content}</p>
+          </li>
+        ))}
+      </ul>
+    </Container>
   );
 }
 

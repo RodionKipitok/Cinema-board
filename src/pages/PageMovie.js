@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { NavLink, Outlet, useParams } from 'react-router-dom';
-
+import { Card, CardContent, Container } from '@mui/material';
 import '../pages/PageMovie.css';
 
 function PageMovie() {
@@ -25,53 +25,55 @@ function PageMovie() {
 
   return (
     <>
-      <NavLink className="goHome" to="/">
-        Go Home
-      </NavLink>
-      <main>
-        <article>
-          <div className="wrapper">
-            <div>
-              <img
-                src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
-                alt=""
-                className="imgPageMovie"
-              />
+      <Container>
+        <NavLink className="goHome" to="/">
+          Go Home
+        </NavLink>
+        <main>
+          <article>
+            <div className="wrapper">
+              <div>
+                <img
+                  src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
+                  alt=""
+                  className="imgPageMovie"
+                />
+              </div>
+              <h1 className="heading">{movie.original_title}</h1>
+              <ul className="title">
+                <li className="itemList">
+                  <p>User Score</p>
+                </li>
+                <li className="itemList">
+                  <p>Overview</p>
+                </li>
+                <li className="itemList">
+                  <p>{movie.overview}</p>
+                </li>
+                <li className="itemList">
+                  <p>Genres</p>
+                </li>
+              </ul>
             </div>
-            <h1 className="heading">{movie.original_title}</h1>
-            <ul className="title">
-              <li className="itemList">
-                <p>User Score</p>
+          </article>
+          <section className="Additional-inform">
+            <p className="titleAdditionalInfo">Additional information</p>
+            <ul>
+              <li>
+                <NavLink className="link" to="cast">
+                  Cast
+                </NavLink>
               </li>
-              <li className="itemList">
-                <p>Overview</p>
-              </li>
-              <li className="itemList">
-                <p>{movie.overview}</p>
-              </li>
-              <li className="itemList">
-                <p>Genres</p>
+              <li>
+                <NavLink className="link" to="reviews">
+                  Reviews
+                </NavLink>
               </li>
             </ul>
-          </div>
-        </article>
-        <section className="Additional-inform">
-          <p className="titleAdditionalInfo">Additional information</p>
-          <ul>
-            <li>
-              <NavLink className="link" to="cast">
-                Cast
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="link" to="reviews">
-                Reviews
-              </NavLink>
-            </li>
-          </ul>
-        </section>
-        <Outlet />
-      </main>
+          </section>
+        </main>
+      </Container>
+      <Outlet />
     </>
   );
 }

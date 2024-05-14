@@ -34,7 +34,7 @@ function Cast() {
             <Card sx={{ maxWidth: 250 }}>
               {cast.profile_path === null ? (
                 <CardMedia
-                  style={{ height: 250 }}
+                  style={{ height: 375 }}
                   component="img"
                   image="https://st.depositphotos.com/1654249/1263/i/950/depositphotos_12630302-stock-photo-3d-man-showing-thumbs-up.jpg"
                   alt=""
@@ -50,7 +50,11 @@ function Cast() {
                 <span>Name</span>
                 <p>{cast.original_name}</p>
                 <span>Character</span>
-                <p>{cast.character}</p>
+                {cast.character === '' ? (
+                  <p>Not information</p>
+                ) : (
+                  <p>{cast.character}</p>
+                )}
               </CardContent>
             </Card>
           </Grid>

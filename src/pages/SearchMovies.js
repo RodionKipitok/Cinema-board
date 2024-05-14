@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { Card, CardContent, Container, TextField, Button } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 import '../pages/SearchMovies.css';
 
 function SearchMovies() {
@@ -41,31 +43,47 @@ function SearchMovies() {
 
   return (
     <>
-      <h2>Search Movie</h2>
-      <form autoComplete="off" onSubmit={hendleSubmit}>
-        <input className="inputSearch" name="search"></input>
-        <button type="submit">Search</button>
-      </form>
-      <main>
-        <article>
-          <ul className="wrapperSearch">
-            {movies.map(movie => (
-              <li className="list-item" key={movie.id}>
-                <img
-                  className="imgSearch"
-                  src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
-                  alt=""
-                />
-                <div className="titleMovie">
-                  <h1 className="">{movie.title}</h1>
-                  <p>Overview</p>
-                  <p className="description">{movie.overview}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </article>
-      </main>
+      <Container sx={{ mt: '1rem', mb: '1rem' }}>
+        <h2>Search Movie</h2>
+        <form autoComplete="off" onSubmit={hendleSubmit}>
+          <TextField
+            label="search"
+            name="search"
+            id="filled-basic"
+            variant="filled"
+            size="small"
+          />
+          <Button
+            style={{ marginLeft: 10 }}
+            type="submit"
+            variant="contained"
+            size="large"
+            endIcon={<SearchIcon />}
+          >
+            Search
+          </Button>
+        </form>
+        <main style={{ marginTop: '1rem' }}>
+          <article>
+            <ul className="wrapperSearch">
+              {movies.map(movie => (
+                <li className="list-item" key={movie.id}>
+                  <img
+                    className="imgSearch"
+                    src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
+                    alt=""
+                  />
+                  <div className="titleMovie">
+                    <h1 className="">{movie.title}</h1>
+                    <p>Overview</p>
+                    <p className="description">{movie.overview}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </main>
+      </Container>
     </>
   );
 }

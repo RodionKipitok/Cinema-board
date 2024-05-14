@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Card, CardContent, CardMedia, Grid, Container } from '@mui/material';
+
 import '../pages/Cast.css';
 
 function Cast() {
   const [casts, setCast] = useState([]);
-  console.log(casts);
+
   const { id } = useParams();
   useEffect(() => {
     const options = {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { Card, CardContent, Container, TextField, Button } from '@mui/material';
+import { useSearchParams, NavLink } from 'react-router-dom';
+import { Container, TextField, Button } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import '../pages/SearchMovies.css';
 
@@ -44,6 +44,9 @@ function SearchMovies() {
   return (
     <>
       <Container sx={{ mt: '1rem', mb: '1rem' }}>
+        <NavLink className="goHome" to="/">
+          Go Home
+        </NavLink>
         <h2>Search Movie</h2>
         <form autoComplete="off" onSubmit={hendleSubmit}>
           <TextField
@@ -74,7 +77,7 @@ function SearchMovies() {
                     alt=""
                   />
                   <div className="titleMovie">
-                    <h1 className="">{movie.title}</h1>
+                    <h1>{movie.title}</h1>
                     <p>Overview</p>
                     <p className="description">{movie.overview}</p>
                   </div>

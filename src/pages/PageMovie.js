@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import { NavLink, Outlet, useParams } from 'react-router-dom';
 import { Card, CardContent, Container } from '@mui/material';
+import { HideButton } from 'components/HideButton';
 import '../pages/PageMovie.css';
 
 function PageMovie() {
+  const [hideInformation, setHideInformation] = useState(false);
   const [movie, setMovie] = useState([]);
   const { id } = useParams();
 
@@ -60,12 +62,20 @@ function PageMovie() {
             <p className="titleAdditionalInfo">Additional information</p>
             <ul>
               <li>
-                <NavLink className="link" to="cast">
+                <NavLink
+                  className="link"
+                  to="cast"
+                  onClick={() => setHideInformation(!hideInformation)}
+                >
                   Cast
                 </NavLink>
               </li>
               <li>
-                <NavLink className="link" to="reviews">
+                <NavLink
+                  className="link"
+                  to="reviews"
+                  onClick={() => setHideInformation(!hideInformation)}
+                >
                   Reviews
                 </NavLink>
               </li>
@@ -73,7 +83,15 @@ function PageMovie() {
           </section>
         </main>
       </Container>
-      <Outlet />
+      {hideInformation && (
+        <div>
+          <Outlet />
+          <HideButton
+            setHideInformation={setHideInformation}
+            hideInformation={hideInformation}
+          />
+        </div>
+      )}
     </>
   );
 }

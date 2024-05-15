@@ -12,8 +12,8 @@ a {
   text-decoration: none;
 }
 
-/* img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-} */
+p {
+  background-image: linear-gradient(to left, #190c3f, #795d96);
+  color: transparent;
+  background-clip: text;
+}

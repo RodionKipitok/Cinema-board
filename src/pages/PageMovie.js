@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { NavLink, Outlet, useParams } from 'react-router-dom';
-import { Card, CardContent, Container } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import { HideButton } from 'components/HideButton';
 import '../pages/PageMovie.css';
 
@@ -32,30 +32,25 @@ function PageMovie() {
           Go Home
         </NavLink>
         <main>
-          <article>
+          <article style={{ display: 'flex' }}>
             <div className="wrapper">
-              <div>
-                <img
-                  src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
-                  alt=""
-                  className="imgPageMovie"
-                />
-              </div>
-              <h1 className="heading">{movie.original_title}</h1>
-              <ul className="title">
-                <li className="itemList">
-                  <p>User Score</p>
-                </li>
-                <li className="itemList">
-                  <p>Overview</p>
-                </li>
-                <li className="itemList">
-                  <p>{movie.overview}</p>
-                </li>
-                <li className="itemList">
-                  <p>Genres</p>
-                </li>
-              </ul>
+              <img
+                src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
+                alt=""
+                className="imgPageMovie"
+              />
+
+              <Box>
+                <Typography className="heading" variant="h2" component="h2">
+                  {movie.original_title}
+                </Typography>
+                <Typography className="itemList" variant="p" component="p">
+                  Overview
+                </Typography>
+                <Typography className="itemList" variant="p" component="p">
+                  {movie.overview}
+                </Typography>
+              </Box>
             </div>
           </article>
           <section className="Additional-inform">
@@ -97,3 +92,21 @@ function PageMovie() {
 }
 
 export default PageMovie;
+
+{
+  /* <h1 className="heading">{movie.original_title}</h1>
+<ul className="title">
+  <li className="itemList">
+    <p>User Score</p>
+  </li>
+  <li className="itemList">
+    <p>Overview</p>
+  </li>
+  <li className="itemList">
+    <p>{movie.overview}</p>
+  </li>
+  <li className="itemList">
+    <p>Genres</p>
+  </li>
+</ul> */
+}

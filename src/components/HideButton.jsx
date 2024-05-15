@@ -7,6 +7,12 @@ export const HideButton = props => {
   const { setHideInformation } = props;
   return (
     <Button
+      style={{
+        marginBottom: 10,
+        marginTop: 10,
+        marginRight: 'auto',
+        marginLeft: 'auto',
+      }}
       variant="contained"
       onClick={() => setHideInformation(!hideInformation)}
     >

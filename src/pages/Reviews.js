@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Card, CardContent, Container } from '@mui/material';
+import {  Container } from '@mui/material';
 
 function Review(params) {
   const [review, setReview] = useState([]);

@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Cinema-board/static/css/main.855fe3d8.css",
-    "main.js": "/Cinema-board/static/js/main.dcee10f0.js",
+    "main.css": "/Cinema-board/static/css/main.745d71c0.css",
+    "main.js": "/Cinema-board/static/js/main.b3335825.js",
     "index.html": "/Cinema-board/index.html",
-    "main.855fe3d8.css.map": "/Cinema-board/static/css/main.855fe3d8.css.map",
-    "main.dcee10f0.js.map": "/Cinema-board/static/js/main.dcee10f0.js.map"
+    "main.745d71c0.css.map": "/Cinema-board/static/css/main.745d71c0.css.map",
+    "main.b3335825.js.map": "/Cinema-board/static/js/main.b3335825.js.map"
   },
   "entrypoints": [
-    "static/css/main.855fe3d8.css",
-    "static/js/main.dcee10f0.js"
+    "static/css/main.745d71c0.css",
+    "static/js/main.b3335825.js"
   ]
 }

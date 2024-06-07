@@ -92,21 +92,3 @@ function PageMovie() {
 }
 
 export default PageMovie;
-
-{
-  /* <h1 className="heading">{movie.original_title}</h1>
-<ul className="title">
-  <li className="itemList">
-    <p>User Score</p>
-  </li>
-  <li className="itemList">
-    <p>Overview</p>
-  </li>
-  <li className="itemList">
-    <p>{movie.overview}</p>
-  </li>
-  <li className="itemList">
-    <p>Genres</p>
-  </li>
-</ul> */
-}

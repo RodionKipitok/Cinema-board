@@ -30,21 +30,4 @@ const Layuot = () => {
 
 export default Layuot;
 
-{
-  /* <Container>
-  <Toolbar>
-    <div>
-      <Typography variant="h4" component="span">
-        Korzhik cinema
-      </Typography>
-      <LocalMoviesIcon fontSize="large" sx={{ pt: '2px' }} />
-    </div>
-    <NavLink className="headLink" to="/">
-      Home
-    </NavLink>
-    <NavLink className="headLink" to="/search/search-movies">
-      Movies
-    </NavLink>
-  </Toolbar>
-</Container>; */
-}
+

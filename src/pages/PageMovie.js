@@ -40,7 +40,7 @@ function PageMovie() {
                 className="imgPageMovie"
               />
 
-              <Box>
+              <Box className="box-title">
                 <Typography className="heading" variant="h2" component="h2">
                   {movie.original_title}
                 </Typography>

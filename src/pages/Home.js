@@ -8,6 +8,7 @@ import {
   Grid,
   Container,
 } from '@mui/material';
+import '../pages/Home.css';
 
 function HomePage() {
   const [listMovies, setListMovies] = useState([]);
@@ -32,31 +33,34 @@ function HomePage() {
   }, []);
 
   return (
-    <Container sx={{ mt: '1rem', mb: '1rem' }}>
-      <Grid container spacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        {listMovies.map(movie => (
-          <Grid key={movie.id} item xs={4}>
-            <Link to={`${movie.id}`}>
-              <Card sx={{ maxWidth: 345 }}>
-                <CardMedia
-                  sx={{ height: 140 }}
-                  image={`https://image.tmdb.org/t/p/w342${movie.backdrop_path}`}
-                  title="post movie"
-                />
-                <CardContent>
-                  <Typography variant="p" component="p">
-                    {movie.original_title}
-                  </Typography>
-                  <Typography variant="p" component="p">
-                    {movie.release_date}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Link>
-          </Grid>
-        ))}
-      </Grid>
-    </Container>
+    <>
+      <h1 className="trend">Trend</h1>
+      <Container sx={{ mt: '1rem', mb: '1rem' }}>
+        <Grid container spacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          {listMovies.map(movie => (
+            <Grid key={movie.id} item xs={4}>
+              <Link to={`${movie.id}`}>
+                <Card sx={{ maxWidth: 345 }}>
+                  <CardMedia
+                    sx={{ height: 140 }}
+                    image={`https://image.tmdb.org/t/p/w342${movie.backdrop_path}`}
+                    title="post movie"
+                  />
+                  <CardContent>
+                    <Typography variant="p" component="p">
+                      {movie.original_title}
+                    </Typography>
+                    <Typography variant="p" component="p">
+                      {movie.release_date}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Link>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </>
   );
 }
 

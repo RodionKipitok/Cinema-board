@@ -1,0 +1,11 @@
+.trend {
+  text-align: center;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 800;
+  font-size: 3.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.00833em;
+  background-image: linear-gradient(to left, #190c3f, #795d96);
+  color: transparent;
+  background-clip: text;
+}

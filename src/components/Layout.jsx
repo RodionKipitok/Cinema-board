@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import { AppBar, Toolbar, Link, Container } from '@mui/material';
+import { AppBar, Toolbar, Container } from '@mui/material';
 import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 import '../components/Layout.css';
 
@@ -26,5 +26,3 @@ const Layuot = () => {
 };
 
 export default Layuot;
-
-

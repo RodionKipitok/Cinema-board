@@ -6,9 +6,8 @@ import '../pages/SearchMovies.css';
 
 function SearchMovies() {
   const [movies, setMovies] = useState([]);
-  console.log(movies);
+
   const [searchParams, setSearchParams] = useSearchParams();
-  console.log(searchParams);
 
   const postQuery = searchParams.get('post') || '';
 
